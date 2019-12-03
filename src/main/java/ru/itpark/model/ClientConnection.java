@@ -21,7 +21,7 @@ public class ClientConnection {
         }
     }
 
-    public void sendMessage(String message) throws IOException {
+    synchronized public void sendMessage(String message) throws IOException {
         writer.write(message);
         writer.newLine();
         writer.flush();
